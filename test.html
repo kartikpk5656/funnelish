@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cookie Consent</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .background-wrapper {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Full-window clickable link */
+    .full-window-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      pointer-events: auto;
+    }
+
+    .background-image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      pointer-events: none; /* Let the link underlay receive click */
+    }
+
+    .cookie-popup {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      max-width: 90%;
+      width: 400px;
+      padding: 2rem;
+      text-align: center;
+      z-index: 2;
+      pointer-events: auto; /* Reactivate interaction only inside the popup */
+    }
+
+    .cookie-popup img {
+      width: 40px;
+      margin-bottom: 1rem;
+    }
+
+    .cookie-popup h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .cookie-popup p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .cookie-popup a.learn-more {
+      color: #333;
+      text-decoration: underline;
+      display: inline-block;
+      margin-top: 6px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-link {
+      text-decoration: none;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .accept {
+      background-color: #4b00ff;
+      color: white;
+    }
+
+    .reject {
+      background-color: transparent;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 480px) {
+      .cookie-popup {
+        padding: 1.5rem 1rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="background-wrapper">
+  <!-- Full-screen hyperlink -->
+  <a href="https://example.com/full-link" class="full-window-link" target="_blank">
+    <img src="https://assets.cdn.filesafe.space/iPqOUJ591RfvyhKZ34gX/media/6800834f641b040cd3b334f1.png" alt="Background" class="background-image">
+  </a>
+
+  <!-- Overlay with clickable popup -->
+  <div class="overlay">
+    <div class="cookie-popup">
+      <img src="https://img.icons8.com/emoji/48/000000/cookie-emoji.png" alt="Cookie Emoji"/>
+      <h2>Cookies</h2>
+      <p>
+        We and selected partners use cookies or similar technologies as specified in the cookie policy.
+        You can consent to the use of such technologies by closing this notice, by interacting with any link or button outside of this notice or by continuing to browse otherwise.
+      </p>
+      <a class="learn-more" href="#">Learn more</a>
+      <div class="buttons">
+        <a href="https://example.com/accept" class="btn-link">
+          <div class="btn accept">Accept</div>
+        </a>
+        <a href="https://example.com/reject" class="btn-link">
+          <div class="btn reject">Reject</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
